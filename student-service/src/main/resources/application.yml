@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: student-service
+  config:
+    import: optional:configserver:config-server
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: student_db
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://discoveryservice:8761/eureka/
+
